@@ -32,7 +32,7 @@
         <div class="item-container-content">
         <label class='item'>
           Display Mode
-          <select id="mode_select" dir='rtl' class="item-select">
+          <select id="display_mode_select" dir='rtl' class="item-select">
             <option class="item-select-option" value="0">Always Hide</option>
             <option class="item-select-option" value="1">Charging Hide</option>
             <option class="item-select-option" value="2">Always Display</option>
@@ -50,7 +50,7 @@
         <div class="item-container-content">
         <label class='item'>
           Battery Level Type
-          <select id="battery_select" dir='rt1' class="item-select">
+          <select id="battery_mode_select" dir='rt1' class="item-select">
             <option class="item-select-option" value="0">5 Color 1</option>
             <option class="item-select-option" value="1">5 Color 2</option>
             <option class="item-select-option" value="2">3 Color</option>
@@ -92,7 +92,7 @@
         <div class='item-container-content'>
           <label class='item'>
             Date area Color
-            <input id='datearea_color_picker' type='text' class='item-color item-color-normal' value='#F1AA86'>
+            <input id='datearea_color_picker' type='text' class='item-color item-color-normal' value='#5555FF'>
           </label>
         </div>
         <div class='item-container-footer'>
@@ -116,7 +116,7 @@
       <div class='item-container-content'>
         <label class='item'>
           Time area Color
-          <input id='timearea_color_picker' type='text' class='item-color item-color-normal' value='#F1AA86'>
+          <input id='timearea_color_picker' type='text' class='item-color item-color-normal' value='#FF5500'>
         </label>
       </div>
       <div class='item-container-footer'>
@@ -141,7 +141,7 @@
       <div class='item-container-content'>
         <label class='item'>
           Message area Color
-          <input id='mssgarea_color_picker' type='text' class='item-color item-color-normal' value='#F1AA86'>
+          <input id='mssgarea_color_picker' type='text' class='item-color item-color-normal' value='#00FFAA'>
         </label>
       </div>
       <div class='item-container-footer'>
@@ -157,8 +157,8 @@
   </body>
   <script>
   function getConfigData() {
-    var modeSelect            = document.getElementById('mode_select');
-    var batterySelect         = document.getElementById('battery_select');
+    var displayModeSelect     = document.getElementById('display_mode_select');
+    var batteryModeSelect     = document.getElementById('battery_mode_select');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
@@ -168,8 +168,8 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     var options = {
-      'mode'            : modeSelect.value,
-      'battery'         : batterySelect.value,
+      'display_mode'    : displayModeSelect.value,
+      'battery_mode'    : batteryModeSelect.value,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color'  : dateareaColorPicker.value,
@@ -180,8 +180,8 @@
     };
   
     // Save for next launch
-    localStorage['mode']             = options['mode'];
-    localStorage['battery']          = options['battery'];
+    localStorage['display_mode']     = options['display_mode'];
+    localStorage['battery_mode']     = options['battery_mode'];
     localStorage['background_color'] = options['background_color'];
     localStorage['datearea_battery'] = options['datearea_battery'];
     localStorage['datearea_color']   = options['datearea_color'];
@@ -216,8 +216,8 @@
   });
 
   (function() {
-    var modeselect            = document.getElementById('mode_select');
-    var batteryselect         = document.getElementById('battery_select');
+    var displayModeSelect     = document.getElementById('display_mode_select');
+    var batteryModeSelect     = document.getElementById('battery_mode_select');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
@@ -227,6 +227,8 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     // Load any previously saved configuration, if available
+    displayModeSelect.value=localStorage['display_mode'];
+    batteryModeSelect.value=localStorage['battery_mode'];
     backgroundColorPicker.value = localStorage['background_color'];
     if(localStorage['datearea_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
