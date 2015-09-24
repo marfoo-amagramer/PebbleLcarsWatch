@@ -168,8 +168,8 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     var options = {
-      'mode'            : modeSelect.value,
-      'battery'         : batterySelect.value,
+//      'mode'            : modeSelect.value,
+//      'battery'         : batterySelect.value,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color'  : dateareaColorPicker.value,
@@ -180,8 +180,8 @@
     };
   
     // Save for next launch
-    localStorage['mode']             = options['mode'];
-    localStorage['battery']          = options['battery'];
+//    localStorage['mode']             = options['mode'];
+//    localStorage['battery']          = options['battery'];
     localStorage['background_color'] = options['background_color'];
     localStorage['datearea_battery'] = options['datearea_battery'];
     localStorage['datearea_color']   = options['datearea_color'];
@@ -216,8 +216,8 @@
   });
 
   (function() {
-    var modeTab               = document.getElementById('mode_tab');
-    var batteryTab            = document.getElementById('battery_tab');
+    var modeselect            = document.getElementById('mode_select');
+    var batteryselect         = document.getElementById('battery_select');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
