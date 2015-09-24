@@ -153,10 +153,10 @@
     var timeareaColorPicker   = document.getElementById('timearea_color_picker');
     var mssgareaCheckbox      = document.getElementById('mssgarea_color_checkbox');
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
- 
+
     var options = {
-      'mode'            : modeTab.active,
-      'battery'         : batteryTab.active,
+//      'mode'            : modeTab.active,
+//      'battery'         : batteryTab.active,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color'  : dateareaColorPicker.value,
@@ -165,6 +165,8 @@
       'mssgarea_battery': mssgareaCheckbox.checked,
       'mssgarea_color'  : mssgareaColorPicker.value
     };
+  
+  console.log('Save: ' + modeTab.active);
 
     // Save for next launch
 //    localStorage['mode']             = options['mode'];
