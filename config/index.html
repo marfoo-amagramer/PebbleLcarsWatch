@@ -28,12 +28,22 @@
       </div>
     </div>
     <div class="item-container">
-      <div class="item-container-header">Tab Buttons</div>
+      <div class="item-container-header">Battery Lavel Color</div>
         <div class="item-container-content">
         <div class="item tab-buttons">
-          <a name="battery_type" class="tab-button active">5 Color 1</a>
-          <a name="battery_type" class="tab-button">5 Color 2</a>
-          <a name="battery_type" class="tab-button">3 Color</a>
+          <a name="mode_tab" class="tab-button">FULL</a>
+          <a name="mode_tab" class="tab-button">HALF</a>
+          <a name="mode_tab" class="tab-button">HIDE</a>
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="item-container-header">Battery Lavel Color</div>
+        <div class="item-container-content">
+        <div class="item tab-buttons">
+          <a name="battery_tab" class="tab-button">1</a>
+          <a name="battery_tab" class="tab-button">2</a>
+          <a name="battery_tab" class="tab-button">3</a>
         </div>
       </div>
     </div>
@@ -134,6 +144,8 @@
   </body>
   <script>
   function getConfigData() {
+    var modeTab               = document.getElementById('mode_tab');
+    var batteryTab            = document.getElementById('battery_tab');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
@@ -143,6 +155,8 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
  
     var options = {
+      'mode'            : modeTab.value,
+      'battery'         : batteryTab.value,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color'  : dateareaColorPicker.value,
@@ -153,6 +167,8 @@
     };
 
     // Save for next launch
+    localStorage['mode']             = options['mode'];
+    localStorage['battery']          = options['battery'];
     localStorage['background_color'] = options['background_color'];
     localStorage['datearea_battery'] = options['datearea_battery'];
     localStorage['datearea_color']   = options['datearea_color'];
@@ -187,6 +203,8 @@
   });
 
   (function() {
+    var modeTab               = document.getElementById('mode_tab');
+    var batteryTab            = document.getElementById('battery_tab');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
@@ -196,6 +214,15 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     // Load any previously saved configuration, if available
+    if(localStorage['mssgarea_battery']==0) {
+      modeTab.value="FULL";
+    }
+    if(localStorage['mssgarea_battery']==1) {
+      modeTab.value="HALF";
+    }
+    if(localStorage['mssgarea_battery']==2) {
+      modeTab.value="HIDE";
+    }
     backgroundColorPicker.value = localStorage['background_color'];
     if(localStorage['datearea_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
