@@ -30,21 +30,22 @@
     <div class="item-container">
       <div class="item-container-header">Battery Lavel Color</div>
         <div class="item-container-content">
-        <div class="item tab-buttons">
-          <a name="mode_tab" class="tab-button">FULL</a>
-          <a name="mode_tab" class="tab-button">HALF</a>
-          <a name="mode_tab" class="tab-button">HIDE</a>
-        </div>
+        <select name="mode_select" dir='rtl' class="item-select">
+          <option class="item-select-option">FULL</option>
+          <option class="item-select-option">HALF</option>
+          <option class="item-select-option">HIDE</option>
+        </select>
       </div>
     </div>
+
     <div class="item-container">
       <div class="item-container-header">Battery Lavel Color</div>
         <div class="item-container-content">
-        <div class="item tab-buttons">
-          <a name="battery_tab" class="tab-button">1</a>
-          <a name="battery_tab" class="tab-button">2</a>
-          <a name="battery_tab" class="tab-button">3</a>
-        </div>
+        <select name="battery_select" dir='rtl' class="item-select">
+          <option class="item-select-option">1</option>
+          <option class="item-select-option">2</option>
+          <option class="item-select-option">3</option>
+        </select>
       </div>
     </div>
     <div class='item-container'>
@@ -144,8 +145,8 @@
   </body>
   <script>
   function getConfigData() {
-    var modeTab               = document.getElementById('mode_tab');
-    var batteryTab            = document.getElementById('battery_tab');
+    var modeSelect            = document.getElementById('mode_select');
+    var batterySelect         = document.getElementById('battery_select');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
@@ -155,8 +156,8 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     var options = {
-      'mode'            : modeTab.value,
-      'battery'         : batteryTab.value,
+      'mode'            : modeSelect.value,
+      'battery'         : batterySelect.value,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color'  : dateareaColorPicker.value,
