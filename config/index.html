@@ -214,12 +214,7 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     // Load any previously saved configuration, if available
-    if(localStorage['mode_tab']==0) {
-    }
-    if(localStorage['mode_tab']==1) {
-    }
-    if(localStorage['mode_tab']==2) {
-    }
+    modeTab.active=localStorage['mode'];
     backgroundColorPicker.value = localStorage['background_color'];
     if(localStorage['datearea_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
