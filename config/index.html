@@ -66,6 +66,55 @@
         Choose the date area color. 
       </div>
     </div>
+    <div class='item-container'>
+      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Time Area with Battery level
+          <input id='timearea_color_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        This switches the time area colors with battery level.
+      </div>
+    </div>
+    <div class='item-container'>
+      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Time area Color
+          <input id='timearea_color_picker' type='text' class='item-color item-color-sunny' value='#F1AA86'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the time area color. 
+      </div>
+    </div>
+    <div class='item-container'>
+      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Message Area with Battery level
+          <input id='mssgarea_color_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        This switches the message area colors with battery level.
+      </div>
+    </div>
+
+    <div class='item-container'>
+      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Date area Color
+          <input id='mssgarea_color_picker' type='text' class='item-color item-color-sunny' value='#F1AA86'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the date area color. 
+      </div>
+    </div>
 
     <div class='item-container'>
       <div class='button-container'>
@@ -78,17 +127,29 @@
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox      = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker   = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox      = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
  
     var options = {
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
       'datearea_color':dateareaColorPicker.value
+      'timearea_battery': timeareaCheckbox.checked,
+      'timearea_color':timeareaColorPicker.value
+      'mssgarea_battery': mssgareaCheckbox.checked,
+      'mssgarea_color':mssgareaColorPicker.value
     };
 
     // Save for next launch
     localStorage['background_color'] = options['background_color'];
     localStorage['datearea_battery'] = options['datearea_battery'];
-    localStorage['datearea_color'] = options['datearea_color'];
+    localStorage['datearea_color']   = options['datearea_color'];
+    localStorage['timearea_battery'] = options['timearea_battery'];
+    localStorage['timearea_color']   = options['timearea_color'];
+    localStorage['mssgarea_battery'] = options['mssgarea_battery'];
+    localStorage['mssgarea_color']   = options['mssgarea_color'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -119,6 +180,10 @@
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker   = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox      = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker   = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox      = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     // Load any previously saved configuration, if available
     backgroundColorPicker.value = localStorage['background_color'];
@@ -126,6 +191,14 @@
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
     }
     dateareaColorPicker.value = localStorage['datearea_color'];
+    if(localStorage['timearea_battery']) {
+      timeareaCheckbox.checked = JSON.parse(localStorage['timearea_battery']);
+    }
+    timeareaColorPicker.value = localStorage['timearea_color'];
+    if(localStorage['mssgarea_battery']) {
+      mssgareaCheckbox.checked = JSON.parse(localStorage['mssgarea_battery']);
+    }
+    mssgareaColorPicker.value = localStorage['mssgarea_color'];
   })();
   </script>
 </html>
