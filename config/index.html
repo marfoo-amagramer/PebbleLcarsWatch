@@ -32,7 +32,7 @@
         <div class="item-container-content">
         <label class='item'>
           Display Mode
-          <select name="mode_select" dir='rtl' class="item-select">
+          <select id="mode_select" dir='rtl' class="item-select">
             <option class="item-select-option" value="1">FULL</option>
             <option class="item-select-option">HALF</option>
             <option class="item-select-option">HIDE</option>
@@ -50,7 +50,7 @@
         <div class="item-container-content">
         <label class='item'>
           Battery Level Type
-          <select name="battery_select" dir='rt1' class="item-select">
+          <select id="battery_select" dir='rt1' class="item-select">
             <option class="item-select-option">1</option>
             <option class="item-select-option">2</option>
             <option class="item-select-option">3</option>
@@ -168,7 +168,7 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     var options = {
-      'mode'            : modeSelect.selected,
+      'mode'            : modeSelect,
 //      'battery'         : batterySelect.value,
       'background_color': backgroundColorPicker.value,
       'datearea_battery': dateareaCheckbox.checked,
