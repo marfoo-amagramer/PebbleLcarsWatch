@@ -214,13 +214,13 @@
     var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
 
     // Load any previously saved configuration, if available
-    if(localStorage['mssgarea_battery']==0) {
+    if(localStorage['mode_tab']==0) {
       modeTab.value="FULL";
     }
-    if(localStorage['mssgarea_battery']==1) {
+    if(localStorage['mode_tab']==1) {
       modeTab.value="HALF";
     }
-    if(localStorage['mssgarea_battery']==2) {
+    if(localStorage['mode_tab']==2) {
       modeTab.value="HIDE";
     }
     backgroundColorPicker.value = localStorage['background_color'];
