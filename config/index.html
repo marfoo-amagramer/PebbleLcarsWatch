@@ -33,7 +33,7 @@
         <label class='item'>
           Display Mode
           <select name="mode_select" dir='rtl' class="item-select">
-            <option class="item-select-option" value="0">FULL</option>
+            <option class="item-select-option">FULL</option>
             <option class="item-select-option">HALF</option>
             <option class="item-select-option">HIDE</option>
           </select>
@@ -179,8 +179,6 @@
       'mssgarea_color'  : mssgareaColorPicker.value
     };
   
-  console.log('Save: ' + modeTab.active);
-
     // Save for next launch
     localStorage['mode']             = options['mode'];
     localStorage['battery']          = options['battery'];
