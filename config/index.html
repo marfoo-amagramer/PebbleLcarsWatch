@@ -63,6 +63,25 @@
       </div>
     </div>
 
+    <div class="item-container">
+      <div class="item-container-header">Customizability</div>
+        <div class="item-container-content">
+        <label class='item'>
+          Sleep Mode
+          <select id="sleep_mode_select" dir='rt1' class="item-select">
+            <option class="item-select-option" value="0">None</option>
+            <option class="item-select-option" value="1">Weekday</option>
+            <option class="item-select-option" value="2">WeekEnd</option>
+            <option class="item-select-option" value="3">Everyday</option>
+          </select>
+          </label>
+        </div>
+        <div class='item-container-footer'>
+        Choose the app's battery level type. 
+        </div>
+      </div>
+    </div>
+
     <div class='item-container'>
       <div class='item-container-header'>Accessibility</div>
       <div class='item-container-content'>
@@ -209,38 +228,71 @@
   </body>
   <script>
   function getConfigData() {
-    var displayModeSelect     = document.getElementById('display_mode_select');
-    var batteryModeSelect     = document.getElementById('battery_mode_select');
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
-    var dateareaColorPicker   = document.getElementById('datearea_color_picker');
-    var timeareaCheckbox      = document.getElementById('timearea_color_checkbox');
-    var timeareaColorPicker   = document.getElementById('timearea_color_picker');
-    var mssgareaCheckbox      = document.getElementById('mssgarea_color_checkbox');
-    var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
+    var displayModeSelect               = document.getElementById('display_mode_select');
+    var batteryModeSelect               = document.getElementById('battery_mode_select');
+    var sleepModeSelect                 = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker           = document.getElementById('background_color_picker');
+    var dateareaCheckbox                = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker             = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox                = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker             = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox                = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker             = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker        = document.getElementById('this_month_text_color_picker');
+    var thismonthBackgroundColorPicker  = document.getElementById('this_month_back_color_picker');
+    var othermonthTextColorPicker       = document.getElementById('other_month_text_color_picker');
+    var othermonthBackgroundColorPicker = document.getElementById('other_month_back_color_picker');
+    var saturdayTextColorPicker         = document.getElementById('saturday_text_color_picker');
+    var saturdayBackgroundColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker           = document.getElementById('sunday_text_color_picker');
+    var sundayBackgroundColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox               = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker            = document.getElementById('today_text_color_picker');
+    var todayBackgroundCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackgroundColorPicker      = document.getElementById('today_back_color_picker');
 
     var options = {
-      'display_mode'    : displayModeSelect.value,
-      'battery_mode'    : batteryModeSelect.value,
-      'background_color': backgroundColorPicker.value,
-      'datearea_battery': dateareaCheckbox.checked,
-      'datearea_color'  : dateareaColorPicker.value,
-      'timearea_battery': timeareaCheckbox.checked,
-      'timearea_color'  : timeareaColorPicker.value,
-      'mssgarea_battery': mssgareaCheckbox.checked,
-      'mssgarea_color'  : mssgareaColorPicker.value
+      'display_mode'     : displayModeSelect.value,
+      'battery_mode'     : batteryModeSelect.value,
+      'sleep_mode'       : sleepModeSelect.value,
+      'background_color' : backgroundColorPicker.value,
+      'datearea_battery' : dateareaCheckbox.checked,
+      'datearea_color'   : dateareaColorPicker.value,
+      'timearea_battery' : timeareaCheckbox.checked,
+      'timearea_color'   : timeareaColorPicker.value,
+      'mssgarea_battery' : mssgareaCheckbox.checked,
+      'mssgarea_color'   : mssgareaColorPicker.value,
+      'this_month_color' : thismonthColorPicker.value,
+      'other_month_color': othermonthColorPicker.value,
+      'saturday_color'   : saturdayColorPicker.value,
+      'sunday_color'     : sundayColorPicker.value,
+      'today_battery'    : todayCheckbox.checked,
+      'today_color'      : todayColorPicker.value
     };
   
     // Save for next launch
-    localStorage['display_mode']     = options['display_mode'];
-    localStorage['battery_mode']     = options['battery_mode'];
-    localStorage['background_color'] = options['background_color'];
-    localStorage['datearea_battery'] = options['datearea_battery'];
-    localStorage['datearea_color']   = options['datearea_color'];
-    localStorage['timearea_battery'] = options['timearea_battery'];
-    localStorage['timearea_color']   = options['timearea_color'];
-    localStorage['mssgarea_battery'] = options['mssgarea_battery'];
-    localStorage['mssgarea_color']   = options['mssgarea_color'];
+    localStorage['display_mode']                 = options['display_mode'];
+    localStorage['battery_mode']                 = options['battery_mode'];
+    localStorage['sleep_mode']                   = options['sleep_mode'];
+    localStorage['background_color']             = options['background_color'];
+    localStorage['datearea_battery']             = options['datearea_battery'];
+    localStorage['datearea_color']               = options['datearea_color'];
+    localStorage['timearea_battery']             = options['timearea_battery'];
+    localStorage['timearea_color']               = options['timearea_color'];
+    localStorage['mssgarea_battery']             = options['mssgarea_battery'];
+    localStorage['mssgarea_color']               = options['mssgarea_color'];
+    localStorage['this_month_text_color']        = options['this_month_text_color'];
+    localStorage['this_month_back_color']        = options['this_month_back_color'];
+    localStorage['other_month_text_color']       = options['other_month_text_color'];
+    localStorage['other_month_back_color']       = options['other_month_back_color'];
+    localStorage['saturday_text_color']          = options['saturday_text_color'];
+    localStorage['saturday_back_color']          = options['saturday_back_color'];
+    localStorage['sunday_text_color']            = options['sunday_text_color'];
+    localStorage['sunday_back_color']            = options['sunday_back_color'];
+    localStorage['today_text_battery']           = options['today_text_battery'];
+    localStorage['today_text_color']             = options['today_text_color'];
+    localStorage['today_back_battery']           = options['today_back_battery'];
+    localStorage['today_back_color']             = options['today_back_color'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -268,19 +320,34 @@
   });
 
   (function() {
-    var displayModeSelect     = document.getElementById('display_mode_select');
-    var batteryModeSelect     = document.getElementById('battery_mode_select');
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var dateareaCheckbox      = document.getElementById('datearea_color_checkbox');
-    var dateareaColorPicker   = document.getElementById('datearea_color_picker');
-    var timeareaCheckbox      = document.getElementById('timearea_color_checkbox');
-    var timeareaColorPicker   = document.getElementById('timearea_color_picker');
-    var mssgareaCheckbox      = document.getElementById('mssgarea_color_checkbox');
-    var mssgareaColorPicker   = document.getElementById('mssgarea_color_picker');
+    var displayModeSelect               = document.getElementById('display_mode_select');
+    var batteryModeSelect               = document.getElementById('battery_mode_select');
+    var sleepModeSelect                 = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker           = document.getElementById('background_color_picker');
+    var dateareaCheckbox                = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker             = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox                = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker             = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox                = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker             = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker        = document.getElementById('this_month_text_color_picker');
+    var thismonthBackgroundColorPicker  = document.getElementById('this_month_back_color_picker');
+    var othermonthTextColorPicker       = document.getElementById('other_month_text_color_picker');
+    var othermonthBackgroundColorPicker = document.getElementById('other_month_back_color_picker');
+    var saturdayTextColorPicker         = document.getElementById('saturday_text_color_picker');
+    var saturdayBackgroundColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker           = document.getElementById('sunday_text_color_picker');
+    var sundayBackgroundColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox               = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker            = document.getElementById('today_text_color_picker');
+    var todayBackgroundCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackgroundColorPicker      = document.getElementById('today_back_color_picker');
 console.log(localStorage['today_back_color']);
+
     // Load any previously saved configuration, if available
-    displayModeSelect.value=localStorage['display_mode'];
-    batteryModeSelect.value=localStorage['battery_mode'];
+    displayModeSelect.value     =localStorage['display_mode'];
+    batteryModeSelect.value     =localStorage['battery_mode'];
+    sleepModeSelect.value       =localStorage['sleep_mode'];
     backgroundColorPicker.value = localStorage['background_color'];
     if(localStorage['today_text_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
@@ -293,7 +360,23 @@ console.log(localStorage['today_back_color']);
     if(localStorage['mssgarea_battery']) {
       mssgareaCheckbox.checked = JSON.parse(localStorage['mssgarea_battery']);
     }
-    mssgareaColorPicker.value = localStorage['mssgarea_color'];
+    mssgareaColorPicker.value       = localStorage['mssgarea_color'];
+    thismonthTextColorPicker.value  = localStorage['this_month_ext_color'];
+    thismonthBackColorPicker.value  = localStorage['this_month_background_color'];
+    othermonthTextColorPicker.value = localStorage['other_month_text_color'];
+    othermonthBackColorPicker.value = localStorage['other_month_back_color'];
+    saturdayTextColorPicker.value   = localStorage['saturday_text_color'];
+    saturdayBackColorPicker.value   = localStorage['saturday_back_color'];
+    sundayTextColorPicker.value     = localStorage['sunday_text_color'];
+    sundayBackColorPicker.value     = localStorage['sunday_back_color'];
+    todayTextColorPicker.value      = localStorage['today_text_color'];
+    if(localStorage['today_text_battery']) {
+      todayTextCheckbox.checked = JSON.parse(localStorage['today_text_battery']);
+    }
+    if(localStorage['today_background_battery']) {
+      todayBackgroundCheckbox.checked = JSON.parse(localStorage['today_back_battery']);
+    }
+    todayBackColorPicker.value      = localStorage['today_back_color'];
   })();
   </script>
 </html>
