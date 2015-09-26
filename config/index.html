@@ -19,17 +19,7 @@
 
   <body>
     <h1 class='title'>LcarsWatch Configuration</h1>
-<div class="item-container">
-  <div class="item-container-header">Input Field + Send Button</div>
-  <div class="item-container-content">
-    <label class="item">
-      <div class="item-input-wrapper item-input-wrapper-button">
-        <input id='color_checkbox' type='checkbox' class='item-toggle'>
-      </div>
-      <input id='color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
-    </label>
-  </div>
-</div>
+
     <div class='item-container'>
       <div class='item-container-content'>
         <div class='item'>
@@ -85,6 +75,10 @@
             <option class="item-select-option" value="3"         >Everyday</option>
           </select>
           </label>
+          <label class="item">
+          Sleep Start Time
+          <input id="sleep_mode_start" type="time" class="item-time" name="time-1" value="23:00">
+    </label>
         </div>
         <div class='item-container-footer'>
         Choose the app's battery level type. 
