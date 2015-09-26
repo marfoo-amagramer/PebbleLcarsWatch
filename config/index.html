@@ -393,6 +393,16 @@
     } else {
       quietModeSelect.value='0';
     }
+    if (localStorage['quiet_mode_str_time']) {
+      quietModeStrTime.value       =localStorage['quiet_mode_str_time'];
+    } else {
+      quietModeStrTime.value='23:00';
+    }
+    if (localStorage['quiet_mode_end_time']) {
+      quietModeEndTime.value       =localStorage['quiet_mode_end_time'];
+    } else {
+      quietModeEndTime.value='07:00';
+    }
     if (localStorage['background_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
     } else {
