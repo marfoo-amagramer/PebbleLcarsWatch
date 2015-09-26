@@ -363,6 +363,7 @@
     var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
     var todayBackColorPicker      = document.getElementById('today_back_color_picker');
 localStorage.clear();
+console.log(localStorage['display_mode']);
     // Load any previously saved configuration, if available
     if (localStorage['display_mode']=='undefined') {
       displayModeSelect.value='0';
