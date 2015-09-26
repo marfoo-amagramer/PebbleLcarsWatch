@@ -228,17 +228,17 @@
   </body>
   <script>
   function getConfigData() {
-    var displayModeSelect               = document.getElementById('display_mode_select');
-    var batteryModeSelect               = document.getElementById('battery_mode_select');
-    var sleepModeSelect                 = document.getElementById('sleep_mode_select');
-    var backgroundColorPicker           = document.getElementById('background_color_picker');
-    var dateareaCheckbox                = document.getElementById('datearea_color_checkbox');
-    var dateareaColorPicker             = document.getElementById('datearea_color_picker');
-    var timeareaCheckbox                = document.getElementById('timearea_color_checkbox');
-    var timeareaColorPicker             = document.getElementById('timearea_color_picker');
-    var mssgareaCheckbox                = document.getElementById('mssgarea_color_checkbox');
-    var mssgareaColorPicker             = document.getElementById('mssgarea_color_picker');
-    var thismonthTextColorPicker        = document.getElementById('this_month_text_color_picker');
+    var displayModeSelect         = document.getElementById('display_mode_select');
+    var batteryModeSelect         = document.getElementById('battery_mode_select');
+    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker     = document.getElementById('background_color_picker');
+    var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker       = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox          = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker       = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('this_month_text_color_picker');
     var thismonthBackColorPicker  = document.getElementById('this_month_back_color_picker');
     var othermonthTextColorPicker = document.getElementById('other_month_text_color_picker');
     var othermonthBackColorPicker = document.getElementById('other_month_back_color_picker');
@@ -252,22 +252,28 @@
     var todayBackColorPicker      = document.getElementById('today_back_color_picker');
 
     var options = {
-      'display_mode'     : displayModeSelect.value,
-      'battery_mode'     : batteryModeSelect.value,
-      'sleep_mode'       : sleepModeSelect.value,
-      'background_color' : backgroundColorPicker.value,
-      'datearea_battery' : dateareaCheckbox.checked,
-      'datearea_color'   : dateareaColorPicker.value,
-      'timearea_battery' : timeareaCheckbox.checked,
-      'timearea_color'   : timeareaColorPicker.value,
-      'mssgarea_battery' : mssgareaCheckbox.checked,
-      'mssgarea_color'   : mssgareaColorPicker.value,
-      'this_month_color' : thismonthColorPicker.value,
-      'other_month_color': othermonthColorPicker.value,
-      'saturday_color'   : saturdayColorPicker.value,
-      'sunday_color'     : sundayColorPicker.value,
-      'today_battery'    : todayCheckbox.checked,
-      'today_color'      : todayColorPicker.value
+      'display_mode'          : displayModeSelect.value,
+      'battery_mode'          : batteryModeSelect.value,
+      'sleep_mode'            : sleepModeSelect.value,
+      'background_color'      : backgroundColorPicker.value,
+      'datearea_battery'      : dateareaCheckbox.checked,
+      'datearea_color'        : dateareaColorPicker.value,
+      'timearea_battery'      : timeareaCheckbox.checked,
+      'timearea_color'        : timeareaColorPicker.value,
+      'mssgarea_battery'      : mssgareaCheckbox.checked,
+      'mssgarea_color'        : mssgareaColorPicker.value,
+      'this_month_text_color' : thismonthTextColorPicker.value,
+      'this_month_back_color' : thismonthBackColorPicker.value,
+      'other_month_text_color': othermonthTextColorPicker.value,
+      'other_month_back_color': othermonthBackColorPicker.value,
+      'saturday_text_color'   : saturdayTextColorPicker.value,
+      'saturday_back_color'   : saturdayBackColorPicker.value,
+      'sunday_text_color'     : sundayTextColorPicker.value,
+      'sunday_back_color'     : sundayBackColorPicker.value,
+      'today_text_battery'    : todayTextCheckbox.checked,
+      'today_text_color'      : todayTextColorPicker.value
+      'today_back_battery'    : todayBackCheckbox.checked,
+      'today_back_color'      : todayBackColorPicker.value
     };
   
     // Save for next launch
