@@ -67,8 +67,8 @@
       <div class="item-container-header">Customizability</div>
         <div class="item-container-content">
         <label class='item'>
-          Sleep Mode
-          <select id="sleep_mode_select" dir='rt1' class="item-select">
+          quiet Mode
+          <select id="quiet_mode_select" dir='rt1' class="item-select">
             <option class="item-select-option" value="0" selected>None</option>
             <option class="item-select-option" value="1"         >Weekday</option>
             <option class="item-select-option" value="2"         >WeekEnd</option>
@@ -76,8 +76,12 @@
           </select>
           </label>
           <label class="item">
-            Sleep Start Time
-            <input id="sleep_mode_start" type="time" class="item-time" name="time-1" value="23:00">
+            quiet Start Time
+            <input id="quiet_mode_str_time" type="time" class="item-time" value="23:00">
+          </label>
+          <label class="item">
+            quiet End Time
+            <input id="quiet_mode_end_time" type="time" class="item-time" value="07:00">
           </label>
         </div>
         <div class='item-container-footer'>
@@ -244,7 +248,9 @@
   function getConfigData() {
     var displayModeSelect         = document.getElementById('display_mode_select');
     var batteryModeSelect         = document.getElementById('battery_mode_select');
-    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var quietModeSelect           = document.getElementById('quiet_mode_select');
+    var quietModeStrTime          = document.getElementById('quiet_mode_str_time');
+    var quietModeEndTime          = document.getElementById('quiet_mode_end_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
@@ -268,7 +274,9 @@
     var options = {
       'display_mode'          : displayModeSelect.value,
       'battery_mode'          : batteryModeSelect.value,
-      'sleep_mode'            : sleepModeSelect.value,
+      'quiet_mode'            : quietModeSelect.value,
+      'quiet_mode_str_time'   : quietModeStrTime.value,
+      'quiet_mode_end_time'   : quietModeEndTime.value,
       'background_color'      : backgroundColorPicker.value,
       'datearea_battery'      : dateareaCheckbox.checked,
       'datearea_color'        : dateareaColorPicker.value,
@@ -293,7 +301,9 @@
     // Save for next launch
     localStorage['display_mode']                 = options['display_mode'];
     localStorage['battery_mode']                 = options['battery_mode'];
-    localStorage['sleep_mode']                   = options['sleep_mode'];
+    localStorage['quiet_mode']                   = options['quiet_mode'];
+    localStorage['quiet_mode_str_time']          = options['quiet_mode_str_time'];
+    localStorage['quiet_mode_end_time']          = options['quiet_mode_end_time'];
     localStorage['background_color']             = options['background_color'];
     localStorage['datearea_battery']             = options['datearea_battery'];
     localStorage['datearea_color']               = options['datearea_color'];
@@ -342,7 +352,9 @@
   (function() {
     var displayModeSelect         = document.getElementById('display_mode_select');
     var batteryModeSelect         = document.getElementById('battery_mode_select');
-    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var quietModeSelect           = document.getElementById('quiet_mode_select');
+    var quietModeStrTime          = document.getElementById('quiet_mode_str_time');
+    var quietModeEndTime          = document.getElementById('quiet_mode_end_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
@@ -376,10 +388,10 @@
     } else {
       batteryModeSelect.value='0';
     }
-    if (localStorage['sleep_mode']) {
-      sleepModeSelect.value       =localStorage['sleep_mode'];
+    if (localStorage['quiet_mode']) {
+      quietModeSelect.value       =localStorage['quiet_mode'];
     } else {
-      sleepModeSelect.value='0';
+      quietModeSelect.value='0';
     }
     if (localStorage['background_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
