@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-
-=======
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Slate Example Configuration</title>
+  <title>LcarsWatch Configuration</title>
   <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
   <script src='js/slate.min.js'></script>
   <style>
@@ -21,7 +18,7 @@
   </head>
 
   <body>
-    <h1 class='title'>Slate Example Configuration</h1>
+    <h1 class='title'>LcarsWatch Configuration</h1>
 
     <div class='item-container'>
       <div class='item-container-content'>
@@ -30,17 +27,73 @@
         </div>
       </div>
     </div>
+    <div class="item-container">
+      <div class="item-container-header">Customizability</div>
+        <div class="item-container-content">
+        <label class='item'>
+          Display Mode
+          <select id="display_mode_select" dir='rtl' class="item-select">
+            <option class="item-select-option" value="0"         >Always Hide</option>
+            <option class="item-select-option" value="1"         >Charging Hide</option>
+            <option class="item-select-option" value="2" selected>Always Display</option>
+          </select>
+          </label>
+        </div>
+        <div class='item-container-footer'>
+        Choose the app's display mode. 
+        </div>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Customizability</div>
+        <div class="item-container-content">
+        <label class='item'>
+          Battery Level Type
+          <select id="battery_mode_select" dir='rt1' class="item-select">
+            <option class="item-select-option" value="0" selected>5 Color</option>
+            <option class="item-select-option" value="1"         >4 Color</option>
+            <option class="item-select-option" value="2"         >3 Color</option>
+          </select>
+          </label>
+        </div>
+        <div class='item-container-footer'>
+        Choose the app's battery level type. 
+        </div>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="item-container-header">Customizability</div>
+        <div class="item-container-content">
+        <label class='item'>
+          Sleep Mode
+          <select id="sleep_mode_select" dir='rt1' class="item-select">
+            <option class="item-select-option" value="0" selected>None</option>
+            <option class="item-select-option" value="1"         >Weekday</option>
+            <option class="item-select-option" value="2"         >WeekEnd</option>
+            <option class="item-select-option" value="3"         >Everyday</option>
+          </select>
+          </label>
+          <label class="item">
+            Sleep Start Time
+            <input id="sleep_mode_start" type="time" class="item-time" name="time-1" value="23:00">
+          </label>
+        </div>
+        <div class='item-container-footer'>
+        Choose the app's battery level type. 
+        </div>
+      </div>
+    </div>
 
     <div class='item-container'>
-      <div class='item-container-header'>Customizability</div>
       <div class='item-container-content'>
-        <label class='item'>
-          Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        <label class="item">
+          <input type="range" class="item-slider" name="slider-1" min="0" max="20" value="8">
+          <div class="item-input-wrapper item-slider-text">
+            <input id="display_interval" type="text" class="item-input" name="slider-1" value="8">
+          </div>
         </label>
-      </div>
-      <div class='item-container-footer'>
-        Choose the app's background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt watches that support many colors.
       </div>
     </div>
 
@@ -48,12 +101,136 @@
       <div class='item-container-header'>Accessibility</div>
       <div class='item-container-content'>
         <label class='item'>
-          High Contrast Mode
-          <input id='high_contrast_checkbox' type='checkbox' class='item-toggle'>
+          Background Color
+          <input id='background_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
         </label>
       </div>
       <div class='item-container-footer'>
-        This switches the app colors to a higher contrast set that promotes readability in low light.
+        Choose the app's background color. 
+      </div>
+    </div>
+
+    <div class='item-container'>
+      <div class='item-container-content'>
+        <label class='item'>
+          Date Area with Battery level
+          <input id='datearea_color_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+        <label class='item'>
+          Date area Color
+          <input id='datearea_color_picker' type='text' class='item-color item-color-normal' value='0xFFAA00'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the date area color. 
+      </div>
+    </div>
+    <div class='item-container'>
+      <div class='item-container-content'>
+        <label class='item'>
+          Time Area with Battery level
+          <input id='timearea_color_checkbox' type='checkbox' class='item-toggle' checked>
+        </label>
+        <label class='item'>
+          Time area Color
+          <input id='timearea_color_picker' type='text' class='item-color item-color-normal' value='0x55AAFF'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the time area color. 
+      </div>
+    </div>
+
+    <div class='item-container'>
+      <div class='item-container-content'>
+        <label class='item'>
+          Message Area with Battery level
+          <input id='mssgarea_color_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+        <label class='item'>
+          Message area Color
+          <input id='mssgarea_color_picker' type='text' class='item-color item-color-normal' value='0xAA00FF'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the message area color. 
+      </div>
+    </div>
+
+    <div class='item-container'>
+      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Calendar This month text Color
+          <input id='thismonth_text_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
+        </label>
+        <label class='item'>
+          Calendar This month background Color
+          <input id='thismonth_back_color_picker' type='text' class='item-color item-color-normal' value='0x555555'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the this month color. 
+      </div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Calendar Other month text Color
+          <input id='othermonth_text_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
+        </label>
+        <label class='item'>
+          Calendar Other month background Color
+          <input id='othermonth_back_color_picker' type='text' class='item-color item-color-normal' value='0xAAAAAA'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the other month color. 
+      </div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Calendar saturday text Color
+          <input id='saturday_text_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
+        </label>
+        <label class='item'>
+          Calendar saturday background Color
+          <input id='saturday_back_color_picker' type='text' class='item-color item-color-normal' value='0x00AAFF'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the saturday color. 
+      </div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Calendar sunday text Color
+          <input id='sunday_text_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
+        </label>
+        <label class='item'>
+          Calendar sunday background Color
+          <input id='sunday_back_color_picker' type='text' class='item-color item-color-normal' value='0xFF0055'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the sunday color. 
+      </div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Calendar today text Battery
+          <input id='today_text_color_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+        <label class='item'>
+          Calendar Today text Color
+          <input id='today_text_color_picker' type='text' class='item-color item-color-normal' value='0xFFFFFF'>
+        </label>
+        <label class='item'>
+          Calendar today text Battery
+          <input id='today_back_color_checkbox' type='checkbox' class='item-toggle' checked>
+        </label>
+        <label class='item'>
+          Calendar Today backgruond Color
+          <input id='today_back_color_picker' type='text' class='item-color item-color-normal' value='0x000000'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the today color. 
       </div>
     </div>
 
@@ -65,17 +242,77 @@
   </body>
   <script>
   function getConfigData() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
- 
-    var options = {
-      'background_color': backgroundColorPicker.value,
-      'high_contrast': highContrastCheckbox.checked
-    };
+    var displayModeSelect         = document.getElementById('display_mode_select');
+    var batteryModeSelect         = document.getElementById('battery_mode_select');
+    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker     = document.getElementById('background_color_picker');
+    var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker       = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox          = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker       = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('thismonth_text_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('thismonth_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('othermonth_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('othermonth_back_color_picker');
+    var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
+    var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
+    var sundayBackColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox         = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker      = document.getElementById('today_text_color_picker');
+    var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackColorPicker      = document.getElementById('today_back_color_picker');
 
+    var options = {
+      'display_mode'          : displayModeSelect.value,
+      'battery_mode'          : batteryModeSelect.value,
+      'sleep_mode'            : sleepModeSelect.value,
+      'background_color'      : backgroundColorPicker.value,
+      'datearea_battery'      : dateareaCheckbox.checked,
+      'datearea_color'        : dateareaColorPicker.value,
+      'timearea_battery'      : timeareaCheckbox.checked,
+      'timearea_color'        : timeareaColorPicker.value,
+      'mssgarea_battery'      : mssgareaCheckbox.checked,
+      'mssgarea_color'        : mssgareaColorPicker.value,
+      'thismonth_text_color' : thismonthTextColorPicker.value,
+      'thismonth_back_color' : thismonthBackColorPicker.value,
+      'othermonth_text_color': othermonthTextColorPicker.value,
+      'othermonth_back_color': othermonthBackColorPicker.value,
+      'saturday_text_color'   : saturdayTextColorPicker.value,
+      'saturday_back_color'   : saturdayBackColorPicker.value,
+      'sunday_text_color'     : sundayTextColorPicker.value,
+      'sunday_back_color'     : sundayBackColorPicker.value,
+      'today_text_battery'    : todayTextCheckbox.checked,
+      'today_text_color'      : todayTextColorPicker.value,
+      'today_back_battery'    : todayBackCheckbox.checked,
+      'today_back_color'      : todayBackColorPicker.value
+    };
+  
     // Save for next launch
-    localStorage['background_color'] = options['background_color'];
-    localStorage['high_contrast'] = options['high_contrast'];
+    localStorage['display_mode']                 = options['display_mode'];
+    localStorage['battery_mode']                 = options['battery_mode'];
+    localStorage['sleep_mode']                   = options['sleep_mode'];
+    localStorage['background_color']             = options['background_color'];
+    localStorage['datearea_battery']             = options['datearea_battery'];
+    localStorage['datearea_color']               = options['datearea_color'];
+    localStorage['timearea_battery']             = options['timearea_battery'];
+    localStorage['timearea_color']               = options['timearea_color'];
+    localStorage['mssgarea_battery']             = options['mssgarea_battery'];
+    localStorage['mssgarea_color']               = options['mssgarea_color'];
+    localStorage['thismonth_text_color']         = options['thismonth_text_color'];
+    localStorage['thismonth_back_color']         = options['thismonth_back_color'];
+    localStorage['othermonth_text_color']        = options['othermonth_text_color'];
+    localStorage['othermonth_back_color']        = options['othermonth_back_color'];
+    localStorage['saturday_text_color']          = options['saturday_text_color'];
+    localStorage['saturday_back_color']          = options['saturday_back_color'];
+    localStorage['sunday_text_color']            = options['sunday_text_color'];
+    localStorage['sunday_back_color']            = options['sunday_back_color'];
+    localStorage['today_text_battery']           = options['today_text_battery'];
+    localStorage['today_text_color']             = options['today_text_color'];
+    localStorage['today_back_battery']           = options['today_back_battery'];
+    localStorage['today_back_color']             = options['today_back_color'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -103,15 +340,133 @@
   });
 
   (function() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    var displayModeSelect         = document.getElementById('display_mode_select');
+    var batteryModeSelect         = document.getElementById('battery_mode_select');
+    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker     = document.getElementById('background_color_picker');
+    var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker       = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox          = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker       = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('thismonth_text_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('thismonth_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('othermonth_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('othermonth_back_color_picker');
+    var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
+    var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
+    var sundayBackColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox         = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker      = document.getElementById('today_text_color_picker');
+    var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackColorPicker      = document.getElementById('today_back_color_picker');
+    
+      console.log(localStorage['display_mode']);
 
     // Load any previously saved configuration, if available
-    if(localStorage['high_contrast']) {
-      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
+    if (localStorage['display_mode']) {
+      displayModeSelect.value     =localStorage['display_mode'];
+    } else {
+      displayModeSelect.value='0';
+    }
+    if (localStorage['battery_mode']) {
+      batteryModeSelect.value     =localStorage['battery_mode'];
+    } else {
+      batteryModeSelect.value='0';
+    }
+    if (localStorage['sleep_mode']) {
+      sleepModeSelect.value       =localStorage['sleep_mode'];
+    } else {
+      sleepModeSelect.value='0';
+    }
+    if (localStorage['background_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
+    } else {
+      backgroundColorPicker.value='0x000000';
+    }
+    if(localStorage['today_text_battery']) {
+      dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
+    }
+    if (localStorage['datearea_color']) {
+      dateareaColorPicker.value = localStorage['datearea_color'];
+    } else {
+      dateareaColorPicker.value='0xFFAA00';
+    }
+    if(localStorage['timearea_battery']) {
+      timeareaCheckbox.checked = JSON.parse(localStorage['timearea_battery']);
+    }
+    if (localStorage['timearea_color']) {
+      timeareaColorPicker.value = localStorage['timearea_color'];
+    } else {
+      timeareaColorPicker.value='0x55AAFF';
+    }
+    if(localStorage['mssgarea_battery']) {
+      mssgareaCheckbox.checked = JSON.parse(localStorage['mssgarea_battery']);
+    }
+    if (localStorage['mssgarea_color']) {
+      mssgareaColorPicker.value       = localStorage['mssgarea_color'];
+    } else {
+      mssgareaColorPicker.value='0xAA00FF';
+    }
+
+    if (localStorage['thismonth_text_color']) {
+      thismonthTextColorPicker.value  = localStorage['thismonth_text_color'];
+    } else {
+      thismonthTextColorPicker.value='0x000000';
+    }
+    if (localStorage['thismonth_back_color']) {
+      thismonthBackColorPicker.value  = localStorage['thismonth_back_color'];
+    } else {
+      thismonthBackColorPicker.value='0x555555';
+    }
+    if (localStorage['othermonth_text_color']) {
+      othermonthTextColorPicker.value = localStorage['othermonth_text_color'];
+    } else {
+      othermonthTextColorPicker.value='0x000000';
+    }
+    if (localStorage['othermonth_back_color']) {
+      othermonthBackColorPicker.value = localStorage['othermonth_back_color'];
+    } else {
+      othermonthBackColorPicker.value='0xAAAAAA';
+    }
+    if (localStorage['saturday_text_color']) {
+      saturdayTextColorPicker.value   = localStorage['saturday_text_color'];
+    } else {
+      saturdayTextColorPicker.value='0x000000';
+    }
+    if (localStorage['saturday_back_color']) {
+      saturdayBackColorPicker.value   = localStorage['saturday_back_color'];
+    } else {
+      saturdayBackColorPicker.value='0x00AAFF';
+    }
+    if (localStorage['sunday_text_color']) {
+      sundayTextColorPicker.value     = localStorage['sunday_text_color'];
+    } else {
+      sundayTextColorPicker.value='0x000000';
+    }
+    if (localStorage['sunday_back_color']) {
+      sundayBackColorPicker.value     = localStorage['sunday_back_color'];
+    } else {
+      sundayBackColorPicker.value='0xFF0055';
+    }
+    if(localStorage['today_text_battery']) {
+      todayTextCheckbox.checked = JSON.parse(localStorage['today_text_battery']);
+    }
+    if (localStorage['today_text_color']) {
+      todayTextColorPicker.value      = localStorage['today_text_color'];
+    } else {
+      todayTextColorPicker.value='0x000000';
+    }
+    if(localStorage['today_back_battery']) {
+      todayBackCheckbox.checked = JSON.parse(localStorage['today_back_battery']);
+    }
+    if (localStorage['today_back_color']) {
+      todayBackColorPicker.value      = localStorage['today_back_color'];
+    } else {
+      todayBackColorPicker.value='0xFFFFFF';
     }
   })();
   </script>
 </html>
->>>>>>> master
