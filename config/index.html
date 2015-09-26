@@ -362,10 +362,13 @@
     var todayTextColorPicker      = document.getElementById('today_text_color_picker');
     var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
     var todayBackColorPicker      = document.getElementById('today_back_color_picker');
-console.log(localStorage['AAtoday_back_color']);
-
+strage.clear();
     // Load any previously saved configuration, if available
-    displayModeSelect.value     =localStorage['display_mode'];
+    if (localStorage['display_mode']=='undefined') {
+      displayModeSelect.value='2';
+    } else {
+      displayModeSelect.value     =localStorage['display_mode'];
+    }
     batteryModeSelect.value     =localStorage['battery_mode'];
     sleepModeSelect.value       =localStorage['sleep_mode'];
     backgroundColorPicker.value = localStorage['background_color'];
