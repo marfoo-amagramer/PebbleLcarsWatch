@@ -369,11 +369,18 @@ localStorage.clear();
     if (localStorage['display_mode']) {
       displayModeSelect.value     =localStorage['display_mode'];
     } else {
-      console.log('未定義:'+localStorage['display_mode']);
       displayModeSelect.value='0';
     }
-    batteryModeSelect.value     =localStorage['battery_mode'];
-    sleepModeSelect.value       =localStorage['sleep_mode'];
+    if (localStorage['battery_mode']) {
+      batteryModeSelect.value     =localStorage['battery_mode'];
+    } else {
+      batteryModeSelect.value='0';
+    }
+    if (localStorage['sleep_mode']) {
+      sleepModeSelect.value       =localStorage['sleep_mode'];
+    } else {
+      sleepModeSelect.value='0';
+    }
     backgroundColorPicker.value = localStorage['background_color'];
     if(localStorage['today_text_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
