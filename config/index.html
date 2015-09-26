@@ -77,7 +77,11 @@
           </label>
           <label class="item">
             Sleep Start Time
-            <input id="sleep_mode_start" type="time" class="item-time" name="time-1" value="23:00">
+            <input id="sleep_mode_str_time" type="time" class="item-time" value="23:00">
+          </label>
+          <label class="item">
+            Sleep Start Time
+            <input id="sleep_mode_end_time" type="time" class="item-time" value="07:00">
           </label>
         </div>
         <div class='item-container-footer'>
@@ -245,6 +249,8 @@
     var displayModeSelect         = document.getElementById('display_mode_select');
     var batteryModeSelect         = document.getElementById('battery_mode_select');
     var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var sleepModeStrTime          = document.getElementById('sleep_mode_str_time');
+    var sleepModeEndTime          = document.getElementById('sleep_mode_end_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
@@ -269,6 +275,8 @@
       'display_mode'          : displayModeSelect.value,
       'battery_mode'          : batteryModeSelect.value,
       'sleep_mode'            : sleepModeSelect.value,
+      'sleep_mode_str_time'   : sleepModeStrTime.value,
+      'sleep_mode_end_time'   : sleepModeEndTime.value,
       'background_color'      : backgroundColorPicker.value,
       'datearea_battery'      : dateareaCheckbox.checked,
       'datearea_color'        : dateareaColorPicker.value,
@@ -294,6 +302,8 @@
     localStorage['display_mode']                 = options['display_mode'];
     localStorage['battery_mode']                 = options['battery_mode'];
     localStorage['sleep_mode']                   = options['sleep_mode'];
+    localStorage['sleep_mode_str_time']          = options['sleep_mode_str_time'];
+    localStorage['sleep_mode_end_time']          = options['sleep_mode_end_time'];
     localStorage['background_color']             = options['background_color'];
     localStorage['datearea_battery']             = options['datearea_battery'];
     localStorage['datearea_color']               = options['datearea_color'];
@@ -343,6 +353,8 @@
     var displayModeSelect         = document.getElementById('display_mode_select');
     var batteryModeSelect         = document.getElementById('battery_mode_select');
     var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var sleepModeStrTime          = document.getElementById('sleep_mode_str_time');
+    var sleepModeEndTime          = document.getElementById('sleep_mode_end_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
