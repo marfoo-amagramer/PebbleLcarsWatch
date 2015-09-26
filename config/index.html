@@ -239,17 +239,17 @@
     var mssgareaCheckbox                = document.getElementById('mssgarea_color_checkbox');
     var mssgareaColorPicker             = document.getElementById('mssgarea_color_picker');
     var thismonthTextColorPicker        = document.getElementById('this_month_text_color_picker');
-    var thismonthBackgroundColorPicker  = document.getElementById('this_month_back_color_picker');
-    var othermonthTextColorPicker       = document.getElementById('other_month_text_color_picker');
-    var othermonthBackgroundColorPicker = document.getElementById('other_month_back_color_picker');
-    var saturdayTextColorPicker         = document.getElementById('saturday_text_color_picker');
-    var saturdayBackgroundColorPicker   = document.getElementById('saturday_back_color_picker');
-    var sundayTextColorPicker           = document.getElementById('sunday_text_color_picker');
-    var sundayBackgroundColorPicker     = document.getElementById('sunday_back_color_picker');
-    var todayTextCheckbox               = document.getElementById('today_text_color_checkbox');
-    var todayTextColorPicker            = document.getElementById('today_text_color_picker');
-    var todayBackgroundCheckbox         = document.getElementById('today_back_color_checkbox');
-    var todayBackgroundColorPicker      = document.getElementById('today_back_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('this_month_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('other_month_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('other_month_back_color_picker');
+    var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
+    var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
+    var sundayBackColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox         = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker      = document.getElementById('today_text_color_picker');
+    var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackColorPicker      = document.getElementById('today_back_color_picker');
 
     var options = {
       'display_mode'     : displayModeSelect.value,
@@ -320,28 +320,28 @@
   });
 
   (function() {
-    var displayModeSelect               = document.getElementById('display_mode_select');
-    var batteryModeSelect               = document.getElementById('battery_mode_select');
-    var sleepModeSelect                 = document.getElementById('sleep_mode_select');
-    var backgroundColorPicker           = document.getElementById('background_color_picker');
-    var dateareaCheckbox                = document.getElementById('datearea_color_checkbox');
-    var dateareaColorPicker             = document.getElementById('datearea_color_picker');
-    var timeareaCheckbox                = document.getElementById('timearea_color_checkbox');
-    var timeareaColorPicker             = document.getElementById('timearea_color_picker');
-    var mssgareaCheckbox                = document.getElementById('mssgarea_color_checkbox');
-    var mssgareaColorPicker             = document.getElementById('mssgarea_color_picker');
-    var thismonthTextColorPicker        = document.getElementById('this_month_text_color_picker');
-    var thismonthBackgroundColorPicker  = document.getElementById('this_month_back_color_picker');
-    var othermonthTextColorPicker       = document.getElementById('other_month_text_color_picker');
-    var othermonthBackgroundColorPicker = document.getElementById('other_month_back_color_picker');
-    var saturdayTextColorPicker         = document.getElementById('saturday_text_color_picker');
-    var saturdayBackgroundColorPicker   = document.getElementById('saturday_back_color_picker');
-    var sundayTextColorPicker           = document.getElementById('sunday_text_color_picker');
-    var sundayBackgroundColorPicker     = document.getElementById('sunday_back_color_picker');
-    var todayTextCheckbox               = document.getElementById('today_text_color_checkbox');
-    var todayTextColorPicker            = document.getElementById('today_text_color_picker');
-    var todayBackgroundCheckbox         = document.getElementById('today_back_color_checkbox');
-    var todayBackgroundColorPicker      = document.getElementById('today_back_color_picker');
+    var displayModeSelect         = document.getElementById('display_mode_select');
+    var batteryModeSelect         = document.getElementById('battery_mode_select');
+    var sleepModeSelect           = document.getElementById('sleep_mode_select');
+    var backgroundColorPicker     = document.getElementById('background_color_picker');
+    var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
+    var dateareaColorPicker       = document.getElementById('datearea_color_picker');
+    var timeareaCheckbox          = document.getElementById('timearea_color_checkbox');
+    var timeareaColorPicker       = document.getElementById('timearea_color_picker');
+    var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
+    var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('this_month_text_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('this_month_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('other_month_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('other_month_back_color_picker');
+    var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
+    var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
+    var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
+    var sundayBackColorPicker     = document.getElementById('sunday_back_color_picker');
+    var todayTextCheckbox         = document.getElementById('today_text_color_checkbox');
+    var todayTextColorPicker      = document.getElementById('today_text_color_picker');
+    var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
+    var todayBackColorPicker      = document.getElementById('today_back_color_picker');
 console.log(localStorage['today_back_color']);
 
     // Load any previously saved configuration, if available
@@ -362,19 +362,19 @@ console.log(localStorage['today_back_color']);
     }
     mssgareaColorPicker.value       = localStorage['mssgarea_color'];
     thismonthTextColorPicker.value  = localStorage['this_month_ext_color'];
-    thismonthBackColorPicker.value  = localStorage['this_month_background_color'];
+    thismonthBackColorPicker.value  = localStorage['this_month_back_color'];
     othermonthTextColorPicker.value = localStorage['other_month_text_color'];
     othermonthBackColorPicker.value = localStorage['other_month_back_color'];
     saturdayTextColorPicker.value   = localStorage['saturday_text_color'];
     saturdayBackColorPicker.value   = localStorage['saturday_back_color'];
     sundayTextColorPicker.value     = localStorage['sunday_text_color'];
     sundayBackColorPicker.value     = localStorage['sunday_back_color'];
-    todayTextColorPicker.value      = localStorage['today_text_color'];
     if(localStorage['today_text_battery']) {
       todayTextCheckbox.checked = JSON.parse(localStorage['today_text_battery']);
     }
-    if(localStorage['today_background_battery']) {
-      todayBackgroundCheckbox.checked = JSON.parse(localStorage['today_back_battery']);
+    todayTextColorPicker.value      = localStorage['today_text_color'];
+    if(localStorage['today_back_battery']) {
+      todayBackCheckbox.checked = JSON.parse(localStorage['today_back_battery']);
     }
     todayBackColorPicker.value      = localStorage['today_back_color'];
   })();
