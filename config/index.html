@@ -366,7 +366,7 @@ localStorage.clear();
       console.log(localStorage['display_mode']);
 
     // Load any previously saved configuration, if available
-    if (localStorage['display_mode']!=='undefined') {
+    if (localStorage['display_mode']) {
       console.log('未定義:'+localStorage['display_mode']);
       displayModeSelect.value='0';
     } else {
