@@ -19,17 +19,17 @@
 
   <body>
     <h1 class='title'>LcarsWatch Configuration</h1>
-
+  
     <div class='item-container'>
       <div class='item-container-content'>
         <div class='item'>
-          Use this configuration page to choose the settings you would like applied to this app.
+          Use this configuration page to choose the settings.
         </div>
       </div>
     </div>
     <div class="item-container">
       <div class="item-container-header">Customizability</div>
-        <div class="item-container-content">
+      <div class="item-container-content">
         <label class='item'>
           Display Mode
           <select id="display_mode_select" dir='rtl' class="item-select">
@@ -37,17 +37,12 @@
             <option class="item-select-option" value="1"         >Charging Hide</option>
             <option class="item-select-option" value="2" selected>Always Display</option>
           </select>
-          </label>
-        </div>
-        <div class='item-container-footer'>
-        Choose the app's display mode. 
-        </div>
+        </label>
       </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Customizability</div>
-        <div class="item-container-content">
+      <div class='item-container-footer'>
+        Choose the app's display mode. 
+      </div>
+      <div class="item-container-content">
         <label class='item'>
           Battery Level Type
           <select id="battery_mode_select" dir='rt1' class="item-select">
@@ -55,17 +50,12 @@
             <option class="item-select-option" value="1"         >4 Color</option>
             <option class="item-select-option" value="2"         >3 Color</option>
           </select>
-          </label>
-        </div>
-        <div class='item-container-footer'>
-        Choose the app's battery level type. 
-        </div>
+        </label>
       </div>
-    </div>
-
-    <div class="item-container">
-      <div class="item-container-header">Customizability</div>
-        <div class="item-container-content">
+      <div class='item-container-footer'>
+          Choose the app's battery level display type. 
+      </div>
+      <div class="item-container-content">
         <label class='item'>
           quiet Mode
           <select id="quiet_mode_select" dir='rt1' class="item-select">
@@ -74,22 +64,20 @@
             <option class="item-select-option" value="2"         >WeekEnd</option>
             <option class="item-select-option" value="3"         >Everyday</option>
           </select>
-          </label>
-          <label class="item">
-            quiet Start Time
-            <input id="quiet_mode_str_time" type="time" class="item-time" value="23:00">
-          </label>
-          <label class="item">
-            quiet End Time
-            <input id="quiet_mode_end_time" type="time" class="item-time" value="07:00">
-          </label>
-        </div>
-        <div class='item-container-footer'>
-        Choose the app's battery level type. 
-        </div>
+        </label>
+        <label class="item">
+          Quiet Start Time
+          <input id="quiet_mode_str_time" type="time" class="item-time" value="23:00">
+        </label>
+        <label class="item">
+          Quiet End Time
+          <input id="quiet_mode_end_time" type="time" class="item-time" value="07:00">
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the app's quiet time type. 
       </div>
     </div>
-
     <div class='item-container'>
       <div class='item-container-content'>
         <label class="item">
@@ -98,6 +86,9 @@
             <input id="display_interval" type="text" class="item-input" name="slider-1" value="8">
           </div>
         </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the app's display time. 
       </div>
     </div>
 
@@ -112,57 +103,45 @@
       <div class='item-container-footer'>
         Choose the app's background color. 
       </div>
-    </div>
-
-    <div class='item-container'>
       <div class='item-container-content'>
         <label class='item'>
           Date Area with Battery level
           <input id='datearea_color_checkbox' type='checkbox' class='item-toggle'>
         </label>
         <label class='item'>
-          Date area Color
+          Date Area Color
           <input id='datearea_color_picker' type='text' class='item-color item-color-normal' value='0xFFAA00'>
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the date area color. 
+        Choose the Date Area color. 
       </div>
-    </div>
-    <div class='item-container'>
       <div class='item-container-content'>
         <label class='item'>
           Time Area with Battery level
           <input id='timearea_color_checkbox' type='checkbox' class='item-toggle' checked>
         </label>
         <label class='item'>
-          Time area Color
+          Time Area Color
           <input id='timearea_color_picker' type='text' class='item-color item-color-normal' value='0x55AAFF'>
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the time area color. 
+        Choose the Time Area color. 
       </div>
-    </div>
-
-    <div class='item-container'>
       <div class='item-container-content'>
         <label class='item'>
           Message Area with Battery level
           <input id='mssgarea_color_checkbox' type='checkbox' class='item-toggle'>
         </label>
         <label class='item'>
-          Message area Color
+          Message Area Color
           <input id='mssgarea_color_picker' type='text' class='item-color item-color-normal' value='0xAA00FF'>
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the message area color. 
+        Choose the Message Area color. 
       </div>
-    </div>
-
-    <div class='item-container'>
-      <div class='item-container-header'>Accessibility</div>
       <div class='item-container-content'>
         <label class='item'>
           Calendar This month text Color
@@ -174,7 +153,7 @@
         </label>
       </div>
       <div class='item-container-footer'>
-        Choose the this month color. 
+        Choose the This month Color. 
       </div>
       <div class='item-container-content'>
         <label class='item'>
