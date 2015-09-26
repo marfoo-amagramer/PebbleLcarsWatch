@@ -381,19 +381,36 @@ localStorage.clear();
     } else {
       sleepModeSelect.value='0';
     }
-    backgroundColorPicker.value = localStorage['background_color'];
+    if (localStorage['background_color']) {
+      backgroundColorPicker.value = localStorage['background_color'];
+    } else {
+      backgroundColorPicker.value='0x000000';
+    }
     if(localStorage['today_text_battery']) {
       dateareaCheckbox.checked = JSON.parse(localStorage['datearea_battery']);
     }
-    dateareaColorPicker.value = localStorage['datearea_color'];
+    if (localStorage['datearea_color']) {
+      dateareaColorPicker.value = localStorage['datearea_color'];
+    } else {
+      dateareaColorPicker.value='0xFFAA00';
+    }
     if(localStorage['timearea_battery']) {
       timeareaCheckbox.checked = JSON.parse(localStorage['timearea_battery']);
     }
-    timeareaColorPicker.value = localStorage['timearea_color'];
+    if (localStorage['timearea_color']) {
+      timeareaColorPicker.value = localStorage['timearea_color'];
+    } else {
+      timeareaColorPicker.value='0x55AAFF';
+    }
     if(localStorage['mssgarea_battery']) {
       mssgareaCheckbox.checked = JSON.parse(localStorage['mssgarea_battery']);
     }
-    mssgareaColorPicker.value       = localStorage['mssgarea_color'];
+    if (localStorage['mssgarea_color']) {
+      mssgareaColorPicker.value       = localStorage['mssgarea_color'];
+    } else {
+      mssgareaColorPicker.value='0xAA00FF';
+    }
+
     thismonthTextColorPicker.value  = localStorage['thismonth_text_color'];
     thismonthBackColorPicker.value  = localStorage['thismonth_back_color'];
     othermonthTextColorPicker.value = localStorage['othermonth_text_color'];
