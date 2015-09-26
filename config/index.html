@@ -362,10 +362,10 @@
     var todayTextColorPicker      = document.getElementById('today_text_color_picker');
     var todayBackCheckbox         = document.getElementById('today_back_color_checkbox');
     var todayBackColorPicker      = document.getElementById('today_back_color_picker');
-strage.clear();
+localstrage.clear();
     // Load any previously saved configuration, if available
     if (localStorage['display_mode']=='undefined') {
-      displayModeSelect.value='2';
+      displayModeSelect.value='0';
     } else {
       displayModeSelect.value     =localStorage['display_mode'];
     }
