@@ -238,10 +238,10 @@
     var timeareaColorPicker       = document.getElementById('timearea_color_picker');
     var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
     var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
-    var thismonthTextColorPicker  = document.getElementById('this_month_text_color_picker');
-    var thismonthBackColorPicker  = document.getElementById('this_month_back_color_picker');
-    var othermonthTextColorPicker = document.getElementById('other_month_text_color_picker');
-    var othermonthBackColorPicker = document.getElementById('other_month_back_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('thismonth_text_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('thismonth_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('othermonth_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('othermonth_back_color_picker');
     var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
     var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
     var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
@@ -262,10 +262,10 @@
       'timearea_color'        : timeareaColorPicker.value,
       'mssgarea_battery'      : mssgareaCheckbox.checked,
       'mssgarea_color'        : mssgareaColorPicker.value,
-      'this_month_text_color' : thismonthTextColorPicker.value,
-      'this_month_back_color' : thismonthBackColorPicker.value,
-      'other_month_text_color': othermonthTextColorPicker.value,
-      'other_month_back_color': othermonthBackColorPicker.value,
+      'thismonth_text_color' : thismonthTextColorPicker.value,
+      'thismonth_back_color' : thismonthBackColorPicker.value,
+      'othermonth_text_color': othermonthTextColorPicker.value,
+      'othermonth_back_color': othermonthBackColorPicker.value,
       'saturday_text_color'   : saturdayTextColorPicker.value,
       'saturday_back_color'   : saturdayBackColorPicker.value,
       'sunday_text_color'     : sundayTextColorPicker.value,
@@ -287,10 +287,10 @@
     localStorage['timearea_color']               = options['timearea_color'];
     localStorage['mssgarea_battery']             = options['mssgarea_battery'];
     localStorage['mssgarea_color']               = options['mssgarea_color'];
-    localStorage['this_month_text_color']        = options['this_month_text_color'];
-    localStorage['this_month_back_color']        = options['this_month_back_color'];
-    localStorage['other_month_text_color']       = options['other_month_text_color'];
-    localStorage['other_month_back_color']       = options['other_month_back_color'];
+    localStorage['thismonth_text_color']         = options['thismonth_text_color'];
+    localStorage['thismonth_back_color']         = options['thismonth_back_color'];
+    localStorage['othermonth_text_color']        = options['othermonth_text_color'];
+    localStorage['othermonth_back_color']        = options['othermonth_back_color'];
     localStorage['saturday_text_color']          = options['saturday_text_color'];
     localStorage['saturday_back_color']          = options['saturday_back_color'];
     localStorage['sunday_text_color']            = options['sunday_text_color'];
@@ -336,10 +336,10 @@
     var timeareaColorPicker       = document.getElementById('timearea_color_picker');
     var mssgareaCheckbox          = document.getElementById('mssgarea_color_checkbox');
     var mssgareaColorPicker       = document.getElementById('mssgarea_color_picker');
-    var thismonthTextColorPicker  = document.getElementById('this_month_text_color_picker');
-    var thismonthBackColorPicker  = document.getElementById('this_month_back_color_picker');
-    var othermonthTextColorPicker = document.getElementById('other_month_text_color_picker');
-    var othermonthBackColorPicker = document.getElementById('other_month_back_color_picker');
+    var thismonthTextColorPicker  = document.getElementById('thismonth_text_color_picker');
+    var thismonthBackColorPicker  = document.getElementById('thismonth_back_color_picker');
+    var othermonthTextColorPicker = document.getElementById('othermonth_text_color_picker');
+    var othermonthBackColorPicker = document.getElementById('othermonth_back_color_picker');
     var saturdayTextColorPicker   = document.getElementById('saturday_text_color_picker');
     var saturdayBackColorPicker   = document.getElementById('saturday_back_color_picker');
     var sundayTextColorPicker     = document.getElementById('sunday_text_color_picker');
@@ -367,10 +367,10 @@ console.log(localStorage['today_back_color']);
       mssgareaCheckbox.checked = JSON.parse(localStorage['mssgarea_battery']);
     }
     mssgareaColorPicker.value       = localStorage['mssgarea_color'];
-    thismonthTextColorPicker.value  = localStorage['this_month_ext_color'];
-    thismonthBackColorPicker.value  = localStorage['this_month_back_color'];
-    othermonthTextColorPicker.value = localStorage['other_month_text_color'];
-    othermonthBackColorPicker.value = localStorage['other_month_back_color'];
+    thismonthTextColorPicker.value  = localStorage['thismonth_ext_color'];
+    thismonthBackColorPicker.value  = localStorage['thismonth_back_color'];
+    othermonthTextColorPicker.value = localStorage['othermonth_text_color'];
+    othermonthBackColorPicker.value = localStorage['othermonth_back_color'];
     saturdayTextColorPicker.value   = localStorage['saturday_text_color'];
     saturdayBackColorPicker.value   = localStorage['saturday_back_color'];
     sundayTextColorPicker.value     = localStorage['sunday_text_color'];
