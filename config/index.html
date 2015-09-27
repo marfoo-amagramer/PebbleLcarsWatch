@@ -81,9 +81,9 @@
     <div class='item-container'>
       <div class='item-container-content'>
         <label class="item">
-          <input type="range" id="flick_display_time" class="item-slider" name="slider-1" min="0" max="20" value="8">
+          <input type="range" id="flick_display_time_slider" class="item-slider" name="slider-1" min="0" max="20" value="8">
           <div class="item-input-wrapper item-slider-text">
-            <input  type="text" class="item-input" name="slider-1" value="8">
+            <input id="flick_display_time" type="text" class="item-input" name="slider-1" value="8">
           </div>
         </label>
       </div>
@@ -337,6 +337,7 @@
     var quietModeSelect           = document.getElementById('quiet_mode_select');
     var quietModeStrTime          = document.getElementById('quiet_mode_str_time');
     var quietModeEndTime          = document.getElementById('quiet_mode_end_time');
+    var flickDisplayTimeSlider    = document.getElementById('flick_display_time_slider');
     var flickDisplayTime          = document.getElementById('flick_display_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
@@ -388,8 +389,10 @@
     }
     if (localStorage['flick_display_time']) {
       flickDisplayTime.value       =localStorage['flick_display_time'];
+      flickDisplayTimeSlider.value =localStorage['flick_display_time'];
     } else {
       flickDisplayTime.value='8';
+      flickDisplayTimeSlider.value='8';
     }
     if (localStorage['background_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
