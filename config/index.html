@@ -83,7 +83,7 @@
         <label class="item">
           <input type="range" class="item-slider" name="slider-1" min="0" max="20" value="8">
           <div class="item-input-wrapper item-slider-text">
-            <input id="display_interval" type="text" class="item-input" name="slider-1" value="8">
+            <input id="flick_display_time" type="text" class="item-input" name="slider-1" value="8">
           </div>
         </label>
       </div>
@@ -230,6 +230,7 @@
     var quietModeSelect           = document.getElementById('quiet_mode_select');
     var quietModeStrTime          = document.getElementById('quiet_mode_str_time');
     var quietModeEndTime          = document.getElementById('quiet_mode_end_time');
+    var flickDisplayTime          = document.getElementById('flick_display_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
@@ -256,6 +257,7 @@
       'quiet_mode'            : quietModeSelect.value,
       'quiet_mode_str_time'   : quietModeStrTime.value,
       'quiet_mode_end_time'   : quietModeEndTime.value,
+      'flick_display_time'    : flickDisplayTime.value,
       'background_color'      : backgroundColorPicker.value,
       'datearea_battery'      : dateareaCheckbox.checked,
       'datearea_color'        : dateareaColorPicker.value,
@@ -283,6 +285,7 @@
     localStorage['quiet_mode']                   = options['quiet_mode'];
     localStorage['quiet_mode_str_time']          = options['quiet_mode_str_time'];
     localStorage['quiet_mode_end_time']          = options['quiet_mode_end_time'];
+    localStorage['flick_display_time']           = options['flick_display_time'];
     localStorage['background_color']             = options['background_color'];
     localStorage['datearea_battery']             = options['datearea_battery'];
     localStorage['datearea_color']               = options['datearea_color'];
@@ -334,6 +337,7 @@
     var quietModeSelect           = document.getElementById('quiet_mode_select');
     var quietModeStrTime          = document.getElementById('quiet_mode_str_time');
     var quietModeEndTime          = document.getElementById('quiet_mode_end_time');
+    var flickDisplayTime          = document.getElementById('flick_display_time');
     var backgroundColorPicker     = document.getElementById('background_color_picker');
     var dateareaCheckbox          = document.getElementById('datearea_color_checkbox');
     var dateareaColorPicker       = document.getElementById('datearea_color_picker');
@@ -381,6 +385,11 @@
       quietModeEndTime.value       =localStorage['quiet_mode_end_time'];
     } else {
       quietModeEndTime.value='07:00';
+    }
+    if (localStorage['flick_display_time']) {
+      flickDisplayTime.value       =localStorage['flick_display_time'];
+    } else {
+      flickDisplayTime.value='8';
     }
     if (localStorage['background_color']) {
       backgroundColorPicker.value = localStorage['background_color'];
